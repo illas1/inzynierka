@@ -540,8 +540,7 @@ section{
 }
 
 .portfolio .about{
-    padding: 10px 10px 10px 0;
-    font-size:14px;
+    font-size:16px;
     text-align: justify; 
     text-align-last:left;
 }
@@ -555,12 +554,15 @@ section{
 }
 
 .portfolio .about p{
-    font-size: 14px;
-    padding-left: 10px;
+    padding: 10px;
+    
 }
 .portfolio .project {
   max-width: 1400px;
   margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -571,19 +573,27 @@ section{
 .portfolio .project:nth-of-type(even){
     background-color: rgba(230,174,188,.34);
 }
+
+
+
 @media (orientation: landscape) {
   .web,
   .about {
-    width: 50%;
-    float: left;
+    width: 50%;   
+      display: flex;
+    flex-direction:row-reverse;
   }
 
   .web img {
-    display: block;
   }
     
+    .portfolio .project:nth-of-type(even){
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
   .portfolio .project:nth-of-type(even) .web {
-    float: right;
+       display: flex;
 
   }
   .portfolio .project:nth-of-type(even) .about {
@@ -640,25 +650,16 @@ section{
 }
 
 
-
-/* find me*/.findme{
-  display: flex;
-  height: 10em;
-  align-items: center;
-}
-
-.findme h2{
-  margin: 0 5%;
-  font-size: 10px;
+/* find me*/
+.findme{
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .findme a{
-  display: inline-flex;
-  align-items:center;
-  margin-left: 10%;
+    margin:10%;
 }
 
 .social-icon{
