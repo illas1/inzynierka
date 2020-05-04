@@ -91,12 +91,15 @@ header > *{
 }
 
 
-header img{
+header img.color{
     height: 50%;
     bottom: 30px;
     right: 0;    
 }
 
+header img.grey{
+    display: none;
+}
 
 header .welcome{
     top: 2%;
@@ -148,7 +151,7 @@ header button:hover{
 }
 
 @media (orientation:portrait) and (min-width: 360px) {
-    header img{
+    header img.color{
         height: 45%;
         bottom: 40px;
         right: 0px;
@@ -170,7 +173,7 @@ header button:hover{
 }
 
 @media (orientation:portrait) and (min-width: 375px) {    
-    header img{
+    header img.color{
         height: 37%;
         bottom: 80px;
     }
@@ -191,7 +194,7 @@ header button:hover{
 }
 
 @media (orientation:portrait) and (min-width: 410px) {
-    header img{
+    header img.color{
         height: 40%;
         bottom: 100px;
     }
@@ -212,7 +215,7 @@ header button:hover{
 }
 
 @media (orientation:portrait) and (min-width: 768px) {
-    header img{
+    header img.color{
         height: 50%;
         right: 70px;
         bottom: 25px;
@@ -232,7 +235,7 @@ header button:hover{
 }
 
 @media (orientation: portrait) and (min-width:1000px) {
-    header img{
+    header img.color{
         height: 55%;
         right: 100px;
         bottom: 60px;
@@ -258,7 +261,7 @@ header button:hover{
 }
 
 @media (orientation: landscape) and (min-width:533px) {
-    header img{
+    header img.color{
         height: 60%;
         right: 15px;
         bottom: 45px;
@@ -285,7 +288,7 @@ header button:hover{
 }
 
 @media (orientation: landscape) and (min-width:640px) {
-    header img{
+    header img.color{
         height: 60%;
         right: 15px;
         bottom: 45px;
@@ -308,7 +311,7 @@ header button:hover{
 }
 
 @media (orientation: landscape) and (min-width:812px) {
-    header img{
+    header img.color{
         height: 75%;
         right: 30px;
         bottom: 45px;
@@ -332,16 +335,27 @@ header button:hover{
 
 
 @media (min-width:1024px) {
-    header img{
+    header img.color{
+        z-index: 1;
+   position: absolute;
         height: 60%;
         right: 5px;
-        bottom: 170px;
+        bottom: 100px;
     }
-    
-    header img:hover{
-        box-shadow: white
+        
+    header img.grey{
+        display: inline;
+   position: absolute;
+        right: 5px;
+        bottom: 50px;
+   height: 80%;
+   opacity: 0.3;
+        transition: 3s;
     }
-    
+    header img.grey:hover{
+   opacity: 0;
+    }
+
     header h1{
         font-size: 60px;
         margin-bottom: 28px;
@@ -385,12 +399,21 @@ header button:hover{
 }
 
 @media (min-width:1500px) {
-    header img{
+    header img.color{
         height: 65%;
         right: 35px;
         bottom: 130px;
     }
     
+    header img.grey{
+        display: inline;
+   position: absolute;
+        right: 5px;
+        bottom: 150px;
+   height: 80%;
+   opacity: 0.3;
+        transition: 2s;
+    }
     header h1{
         margin:100px 0 55px 0;
         font-size: 72px;
@@ -408,7 +431,7 @@ header button:hover{
 }
 
 @media (min-width:1600px) {
-    header img{
+    header img.color{
         height: 65%;
         right: 105px;
         bottom: 160px;
