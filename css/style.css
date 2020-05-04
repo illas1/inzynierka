@@ -2,7 +2,10 @@
    font-family: 'Quicksand',sans-serif;
    font-family: 'Cedarville Cursive',sans-serif;
 */
-
+a{
+    color: black;
+    text-decoration: none;
+}
 
 *{
     margin: 0;
@@ -20,9 +23,59 @@ body{
   display: block;
   clear: both;
 }
+nav ul{
+    display: none;
+}
+
+@media (min-width:1024px){
+    nav{
+    background-image: url(../img/tlo.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    }
+    
+    nav ul{
+    display: flex;
+    list-style: none;
+    }
+    
+    nav img{
+    width: 5%;
+    }
+    
+    li{
+        flex-basis: 25%;
+    }
+    
+    li a{
+        display: block;
+        background-color: white;
+        font-size:16px;
+        text-align: center;
+        padding: 10px;
+        margin: 15px;
+        border-radius: 13px;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    
+    li a:hover{
+        background-color: rgba(230,174,188,.34);
+        color: white;
+        padding: 12px;
+    }
+    
+    header{
+        height: 90vh;
+    }
+}
+
+
 
 header{
-    position: relative;
     background-image: url(../img/tlo.jpeg);
     height: 100vh;
     background-attachment: fixed;
@@ -31,6 +84,7 @@ header{
     background-size: cover;
     overflow: hidden;
 }
+
 
 header > *{
     position: absolute;
@@ -90,6 +144,7 @@ header button:hover{
     border: 1.5px #E3B4BB;
     box-shadow: 0 0 0.2em #cb8892;
     cursor: pointer;
+    color: white;
 }
 
 @media (orientation:portrait) and (min-width: 360px) {
@@ -198,6 +253,8 @@ header button:hover{
         padding: 15px 65px;
     }
     
+
+    
 }
 
 @media (orientation: landscape) and (min-width:533px) {
@@ -281,8 +338,11 @@ header button:hover{
         bottom: 170px;
     }
     
+    header img:hover{
+        box-shadow: white
+    }
+    
     header h1{
-        top: 70px;
         font-size: 60px;
         margin-bottom: 28px;
     }
@@ -296,6 +356,10 @@ header button:hover{
         margin-top:60px;
         padding: 15px 65px;
     }
+    
+        header button:hover{
+    padding: 25px 65px;
+}
     
 }
 @media (min-width:1280px) {    
@@ -367,8 +431,6 @@ header button:hover{
     
 }
 
-
-
 section{
     min-height: 30vh;
 }
@@ -386,6 +448,7 @@ section{
     margin:10px;
     width: 40%;
     max-width: 500px;
+    border-radius: 5px;
 }
 
 @media (min-width:812px){
@@ -393,6 +456,7 @@ section{
     display: flex;
     justify-content: space-around;
     align-items: center;
+        margin-bottom: 20px;
     }
     
     .photo img{
@@ -400,7 +464,7 @@ section{
     width: 22%;
     max-width: 500px;  
     filter: grayscale(65%);
-    transition: all 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     }
     
     .photo:hover img{
@@ -481,7 +545,9 @@ section{
 @media (min-width:1024px){    
     .feature {
         float: left;
+        margin-bottom: 30px;
         width: 33%;
+        height: 33%;
     }
     .feature img{
         width: 100%
@@ -489,11 +555,24 @@ section{
     
     .feature h2{
         padding: 20px 20px;
+      transition: 0.9s;
+        border-radius: 15px;
+    }
+    
+    .feature h2:hover{
+        padding: 20px 20px;
+        border-radius: 35px;
+        border:1px solid rgb(230,174,188);
     }
     
     .feature p{
         font-size: 23px;
         padding: 0 12px;
+    }
+    
+    .feature:hover{
+        background-color: rgba(230,174,188,.1);
+        border-radius: 15px;
     }
 }
 
@@ -536,6 +615,7 @@ section{
     font-size: 26px;
     margin-bottom: 20px;
     text-align: center;
+    text-shadow:3px 2px 1px white, 0 0 0.1em #D5596C;
 }
 .portfolio .web img{
     width: 100%;
@@ -575,14 +655,18 @@ background-color: rgba(230,174,188,.34)
   }
 
     .portfolio .project{
-        
   display: flex;
   justify-content: center;
   align-items: center;
-
+        border-radius: 35px;
+  transition: 0.6s;
     }
-  .web img {
-  }
+        .portfolio .project:hover{
+    box-sizing: border-box;
+background-color: rgba(230,174,188,.5)
+    
+    }
+    
     
     .portfolio .project:nth-of-type(even){
         display: flex;
@@ -597,11 +681,10 @@ background-color: rgba(230,174,188,.34)
     padding-right: 0;
   }
   .portfolio .project:nth-of-type(even) .about p {
-    padding-right: 20px;
   }
   .portfolio .project:nth-of-type(even) .about h2 {
     text-indent: 0;
-    margin-left: 40px;
+    margin: 40px;
   }
 }
 @media (min-width:768px)  and orientation(landscape){
@@ -611,6 +694,7 @@ background-color: rgba(230,174,188,.34)
   }
 
   .portfolio .about h2 {
+    
     font-size: 28px;
     text-indent: 40px;
   }
@@ -646,8 +730,11 @@ background-color: rgba(230,174,188,.34)
   }
 }
 
-
 /* find me*/
+.find{
+    min-height: 15vh;
+}
+
 .findme{
   display: flex;
   justify-content: center;
@@ -656,7 +743,9 @@ background-color: rgba(230,174,188,.34)
 }
 
 .findme a{
-    margin:10%;
+    margin-right:10%;
+    margin-left: 10%;
+    margin-top: 20px;
 }
 
 .social-icon{
@@ -671,9 +760,23 @@ background-color: rgba(230,174,188,.34)
   color: black;
 }
 
-@media (orientation: landscape){
-    .fab{
-        font-size: 60px;
-        
+@media  (min-width:640px){  
+    .fab, .fas{
+        font-size: 30px;
+    }
+}
+
+@media (orientation: landscape) {
+    .fab, .fas{
+        font-size: 30px;
+    }
+}
+
+@media (min-width:1280px){
+    .findme a{
+        margin-top: 5%;
+    }
+        .fab, .fas{
+        font-size: 40px;
     }
 }
